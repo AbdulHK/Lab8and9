@@ -49,7 +49,7 @@ until [ "$selection" = "0" ]; do
 		6  ) 	curl -s -X DELETE -H 'Accept: application/json' http://localhost:8080/containersDel | python -mjson.tool
 			press_enter
 			;;
-		7  ) 	curl -X POST -H 'Content-Type: application/json' http://localhost:8080/containers -d '{"image": "49b7d316bf66"}' | python -mjson.tool
+		7  ) 	curl -X POST -H 'Content-Type: application/json' http://localhost:8080/containers -d '{"image": "58e183d6b311"}' | python -mjson.tool
 			press_enter
 			;;
 		8  )	curl -X PATCH -H 'Content-Type: application/json' http://localhost:8080/containers/6dfc92f407a8 -d '{"state": "running"}'
@@ -64,13 +64,13 @@ until [ "$selection" = "0" ]; do
 		11 )	curl -s -X GET -H 'Accept: application/json' http://localhost:8080/images | python -mjson.tool
 			press_enter
 			;;
-		12 )	curl -s -X DELETE -H 'Accept: application/json' http://localhost:8080/images/imgID | python -mjson.tool
+		12 )	curl -s -X DELETE -H 'Accept: application/json' http://localhost:8080/images/58e183d6b311 | python -mjson.tool
 			press_enter
 			;;
 		13 )	curl -s -X DELETE -H 'Accept: application/json' http://localhost:8080/containersDel | python -mjson.tool
 			press_enter
 			;;
-		14 )	curl -s -X PATCH -H 'Content-Type: application/json' http://localhost:8080/images/id -d '{"tag": "test:1.0"}'
+		14 )	curl -s -X PATCH -H 'Content-Type: application/json' http://localhost:8080/images/615d2288ce48 -d '{"tag": "test:1.0"}'
 			press_enter
 			;;
 		15 )	curl -H 'Accept: application/json' -F file=@Dockerfile http://localhost:8080/images | python -mjson.tool
