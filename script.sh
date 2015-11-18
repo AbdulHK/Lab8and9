@@ -52,10 +52,10 @@ until [ "$selection" = "0" ]; do
 		7  ) 	curl -X POST -H 'Content-Type: application/json' http://localhost:8080/containers -d '{"image": "49b7d316bf66"}' | python -mjson.tool
 			press_enter
 			;;
-		8  )	curl -X PATCH -H 'Content-Type: application/json' http://localhost:8080/containers/e3bace849c64 -d '{"state": "running"}'
+		8  )	curl -X PATCH -H 'Content-Type: application/json' http://localhost:8080/containers/58e183d6b311 -d '{"state": "running"}'
 			press_enter
 			;;
-		9  ) 	curl -X PATCH -H 'Content-Type: application/json' http://localhost:8080/containers/e3bace849c64 -d '{"state": "stopped"}'
+		9  ) 	curl -X PATCH -H 'Content-Type: application/json' http://localhost:8080/containers/58e183d6b311 -d '{"state": "stopped"}'
 			press_enter
 			;;
 		10 )	curl -s -X GET -H 'Accept: application/json' http://localhost:8080/containers/e3bace849c64/logs | python -mjson.tool 
